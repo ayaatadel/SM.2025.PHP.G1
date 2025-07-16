@@ -70,8 +70,32 @@ new table ==> attribute , pk (table)
 employee : name , ssn (key) , gender , BD , address,dep_num(fk),ssn_emp(fk)
 department : num (key)  , name  
 department_location : id , location , department_num(fk)==> num (dep)
-project : name , num (key) , location , dep-num (kk--> num:department)
-emp_projects : proj_num , emp_ssn , work_hours
+project : name , num (key) , location , dep-num (kk--> num:department)emp_projects : proj_num , emp_ssn , work_hours
+
 
 dependents: id,name , RelationShip, bd , name , emp_ssn(fk)
+
+==================>
+mapping ===> erd ==> table
+1- Entities ==> 
+department : num , name  
+ department_location : location , dep_num
+ employee  :firstName , lastName 
+ project :
+ dependents :
+ 2- atrributes ==> entities ===> multi valued attribute 
+ ====> new table ==> atrribute , pk of table 
+ location ==> multi valued attribute
+
+ department_location : location , dep_num
+
+ 3- relation  between entities 
+ 1-1 ===> must , may ==> pk must ==> fk table of may
+1-1 ==. must - must ==> pk of any table in another table
+1-1 ==> may - may ==> new table => pks of two tables 
+
+=============>
+1-m ==> pk of 1 put it in table of M 
+=====>
+m-m  ==> new table => pks of two tables 
 
