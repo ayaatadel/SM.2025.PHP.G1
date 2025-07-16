@@ -97,3 +97,65 @@ condition in range
 
 SELECT id , name  from department where id  between 2 and 4;==>2,3,4
 SELECT id , name  from department where id  in (2 , 4); ===> 2,4
+
+***************************************** select data by order ==> desc , asc  ===> defulat 
+SELECT * FROM `employee` ORDER by ssn DESC;
+
+
+=========================================> update data in table 
+update employee set name ="ayaat"  ===> name ==> values ==> ayaat
+
+====> update ==> condition 
+update employee set name ="ayaat" where id=1
+
+
+==========> and , or , not 
+and ==>  two condition = true 
+update employee set BD="2000-08-12" where name="ayaat" and ssn=1
+
+or ==> on of two conditions is true
+update employee set BD="2000-08-10" where name="ayaat" or ssn=5
+
+not ==> not id =1 ==> any id except 1
+
+====================================>
+
+aggregiation functions ==> min , max , avg , sum , count
+
+select sum(ssn) from employee
+select sum(ssn) as sum_ssn from employee
+
+select min(ssn) from employee
+select min(ssn) as min_ssn from employee
+
+select max(ssn) from employee
+select max(ssn) as max_ssn from employee
+
+select count(ssn) from employee
+select count(ssn) as count_ssn from employee
+
+select avg(ssn) from employee
+select avg(ssn) as avg_ssn from employee
+
+
+====================> like 
+select * from name where name like "a%"  ==> start with a
+select * from name where name like "%a%"  ==> a is in center
+select * from name where name like "%a"  ==>end with a
+
+
+
+====================================> update strucure of table ===> column ===> alter
+
+-- add colum in table emp_projects work_hours
+alter table employee_project add hours int default 0
+
+---> delete column
+alter table employee_project drop column test
+
+
+=========> add constrain colum ==> nuique , not null
+alter table project add constraint uniqueName unique (name)
+
+=========> rename table 
+Alter table employee_project rename to emp_projects
