@@ -59,7 +59,8 @@ run project ==> cd projectName
 ===================> blade engine ===> html ===> u can write code php====> diretives ==> @if , @else ,@for
 
 
-
+===================>
+stop run of project ==> ctrl+c
 
 ========================================> Project laravel ==> install from github
 
