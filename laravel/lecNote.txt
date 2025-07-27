@@ -57,3 +57,14 @@ run project ==> cd projectName
 @dd===> dump and die ==> vardump exit  ===> show data ==> exit
 
 ===================> blade engine ===> html ===> u can write code php====> diretives ==> @if , @else ,@for
+
+
+
+
+========================================> Project laravel ==> install from github
+
+==> git clone link 
+cd project_Laravel_Name
+composer install 
+php artisan key:generate
+php artisan serve
