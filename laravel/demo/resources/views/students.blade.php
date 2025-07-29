@@ -10,6 +10,10 @@
 <body>
 <h3 class="text-success text-center">All Students Page</h3>
 
+<div class="m-5">
+            <a href="{{ route('students.create') }}"><button class="btn btn-success">Create Student</button></a>
+
+</div>
 
 
 <table class="table table-striped w-75 m-auto border">
@@ -31,7 +35,7 @@
     <td><img src="{{ $student->image}}" alt="studentImage" srcset=""></td>
     <td>
         <a href="{{ route('students.view',$student->id) }}"><button class="btn btn-warning">Show</button></a>
-        <button class="btn btn-primary">Edit</button>
+       <a href="{{ route('students.update',$student->id) }}"> <button class="btn btn-primary">Edit</button></a>
         {{-- <a href="{{ route('students.destroy',$student->id) }}"></a> --}}
 
         <form action="{{ route('students.destroy',$student->id) }}" method="post">

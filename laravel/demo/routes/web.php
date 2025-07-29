@@ -66,47 +66,15 @@ Route::get('/', function () {
 //     }
 // })->where('id','[0-9]+');
 
-/**
- * MVC ==> DB: model  ==> php artisan make:model Student =>https://laravel.com/docs/11.x/eloquent
- * ==============> Connection ==> model , DB ==> model مفرد table جمع   == > same Name
- * Logic ==> Controller  ===> Function
- * =========> Create Controller ==> php artisan make:controller StudentsController
- *
- *
- *
- * FRont ==> View
- *
- *
- * Routes ==> URL ==> Request
- * get Data==> get
- * Send Data==> post
- * Update data ==> put
- * Delete Data ==> delete
- *
- * =========================> Resource ===> generate all functions in controller
- * =========> php artisan make:controller TrackController -r
- * ===> create model ==> controller => resource
- * 1- create model ==> php artisan make:model Track
- * 2- ===> create controller ==> php artisan make:controller TrackController --model=Track -r
- *
- * ===============================================================>
- * create model + create controller + resource
- * php artisan make:model Track -c -r  ===> -c:controller , -r: resource
- *
- *
- * ==================================
- * 419 ==> page expired ====>
- * delete ===> change on data ===> access
- * token ===> input : hidden ==> password 
- */
-
-
-
 ///====================================>
 
 // Route::method('url',[ControllerName::class,'function']);
 // Route::get('/students',[StudentController::class,'getStudents'])->name();
 // Route::get('/students/{id}',[StudentController::class,'getStudentData']);
-Route::get('/students',[StudentController::class,'index'])->name('students.index');
-Route::delete('/students/{id}',[StudentController::class,'destroy'])->name('students.destroy');
-Route::get('/students/{id}',[StudentController::class,'show'])->name('students.view');
+Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
+Route::post('/student/store',[StudentController::class,'store'])->name('students.store');
+Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('students.destroy');
+Route::get('/students/{id}', [StudentController::class, 'show'])->name('students.view');
+Route::get('/students/update/{id}',[StudentController::class,'update'])->name('students.update');
+Route::put('/students/edit/{id}',[StudentController::class,'edit'])->name('students.edit');

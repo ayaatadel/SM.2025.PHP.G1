@@ -69,3 +69,68 @@ cd project_Laravel_Name
 composer install 
 php artisan key:generate
 php artisan serve
+=======================================
+Day 2
+/**
+ * MVC ==> DB: model  ==> php artisan make:model Student =>https://laravel.com/docs/11.x/eloquent
+ * ==============> Connection ==> model , DB ==> model مفرد table جمع   == > same Name
+ * Logic ==> Controller  ===> Function
+ * =========> Create Controller ==> php artisan make:controller StudentsController
+ *
+ *
+ *
+ * FRont ==> View
+ *
+ *
+ * Routes ==> URL ==> Request
+ * get Data==> get
+ * Send Data==> post
+ * Update data ==> put
+ * Delete Data ==> delete
+ *
+ * =========================> Resource ===> generate all functions in controller
+ * =========> php artisan make:controller TrackController -r
+ * ===> create model ==> controller => resource
+ * 1- create model ==> php artisan make:model Track
+ * 2- ===> create controller ==> php artisan make:controller TrackController --model=Track -r
+ *
+ * ===============================================================>
+ * create model + create controller + resource
+ * php artisan make:model Track -c -r  ===> -c:controller , -r: resource
+ *
+ *
+ * ==================================
+ * 419 ==> page expired ====>
+ * delete ===> change on data ===> access
+ * token ===> input : hidden ==> password
+ */
+ ===============================================
+
+
+
+Day3
+// cruds ==> create , edit 
+======>  
+Button ==> edit 
+====> view ==> form ==> edit on data 
+=====> function ===> return form
+=====> function ===> select data on form ==> edit
+
+Button==> create
+==> ====> view ==> form ==>  create data
+=====> function ===> return form
+=====> function ===> select data on form ==> create
+
+
+======================>     Acess Data 
+fillable   ===> data can be access
+guarde ==?>
+
+
+1- route =====> 2 route
+2- controller ==> 2 function
+3- view ==> form
+
+
+// component 
+// migrations 
