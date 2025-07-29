@@ -18,3 +18,12 @@ terminal ==> cd projectName
 
 ===> php artisan migrate
 ===> php artisan serve 
+
+
+===================================> Day3
+migration
+id , name , address , image,email,gender,phone ==> student
+id , name , image,description ==> student
+componet ==> navbar , buttons , bootstrap 
+==> functions ===> update , delete 
+==> views ==> update by new data 

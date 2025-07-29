@@ -16,6 +16,8 @@
 
 </head>
 <body>
+    <x-navbar/>
+
     <h1 style="text-align: center;color:#FF2D20 ; font-size:20px; margin-top:50px;
  ">Track PHP G1 2025 Summer Training</h1>
 

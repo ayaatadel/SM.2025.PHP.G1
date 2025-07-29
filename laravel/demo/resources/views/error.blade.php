@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    <x-navbar/>
+
  <h1 style="text-align: center;color:#FF2D20 ; font-size:20px; margin-top:50px;
  ">404 Not Found</h1></body>
 </html>

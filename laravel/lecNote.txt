@@ -131,6 +131,19 @@ guarde ==?>
 2- controller ==> 2 function
 3- view ==> form
 
+===============================  Component ==> https://laravel.com/docs/11.x/blade#components
+// component   ====> file ==> code ===> can be used in any way
+===> navbar ====> file ===> reuse
 
-// component 
-// migrations 
+php artisan make:component Button
+
+====================================================================>
+tables ===> 
+// migrations  ===> structure of tables
+1- create migrations==>php artisan make:migration create_students_table  ==> add table
+1- create migrations==>php artisan make:migration add_phone_to_students_table  ==> add column to table
+
+==========> run migrations ==> php artisan migrate
+==> rollback on step ==>php artisan migrate:rollback
+==> rollback on patch ==>php artisan migrate:rollback --patch=2
+==> rollback on steps ==>php artisan migrate:rollback --steps=2

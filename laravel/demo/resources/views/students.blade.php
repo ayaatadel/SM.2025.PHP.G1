@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>students</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<x-bootstrap-css></x-bootstrap-css>
 </head>
 <body>
-<h3 class="text-success text-center">All Students Page</h3>
+    <x-navbar/>
 
-<div class="m-5">
-            <a href="{{ route('students.create') }}"><button class="btn btn-success">Create Student</button></a>
+<div class="m-5 d-flex justify-content-around">
+    <h3 class="text-success text-center ">All Students Page</h3>
+
+            {{-- <a href="{{ route('students.create') }}"><button class="btn btn-success">Create Student</button></a> --}}
+            <a href="{{ route('students.create') }}">  <x-button class="success" name="Create Student"></x-button>
+</a>
 
 </div>
 
@@ -32,17 +37,21 @@
     <td>{{ $student->id}}</td>
     <td>{{ $student->name}}</td>
     <td>{{ $student->address }}</td>
-    <td><img src="{{ $student->image}}" alt="studentImage" srcset=""></td>
+    <td><img src="{{ $student->image}}" alt="studentImage" srcset="" width="50px" height="50px"></td>
     <td>
-        <a href="{{ route('students.view',$student->id) }}"><button class="btn btn-warning">Show</button></a>
-       <a href="{{ route('students.update',$student->id) }}"> <button class="btn btn-primary">Edit</button></a>
+        <a href="{{ route('students.view',$student->id) }}">  <x-button class="warning" name="Show"></x-button>
+</a>
+       <a href="{{ route('students.update',$student->id) }}">   <x-button class="primary" name="Edit"></x-button>
+</a>
         {{-- <a href="{{ route('students.destroy',$student->id) }}"></a> --}}
 
         <form action="{{ route('students.destroy',$student->id) }}" method="post">
             @method('DELETE')
             @csrf
             {{-- generate input:hidden ==> acess data --}}
-            <button class="btn btn-danger">Delete</button>
+            {{-- <button class="btn btn-danger">Delete</button> --}}
+              <x-button class="danger" name="Delete"></x-button>
+
         </form>
     </td>
 </tr>
@@ -56,7 +65,6 @@
 
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<x-bootstrap-js></x-bootstrap-js>
 </body>
 </html>
