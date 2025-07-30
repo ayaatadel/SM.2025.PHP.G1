@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Track;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,15 +22,16 @@ class StudentFactory extends Factory
         return [
             //
 
-            'name'=>fake()->name(),
-            'email'=>fake()->unique()->safeEmail(),
-            'image'=>fake()->unique()->imageUrl(),
-            'address'=>fake()->address(),
-            'phone'=>fake()->phoneNumber(),
-            'age'=>fake()->numberBetween(19,25),
-            'gender'=>fake()->randomElement(['male','female']),
-            'updated_at'=>fake()->date(),
-            'created_at'=>fake()->date(),
+            'name' => fake()->name(),
+            'email' => fake()->unique()->safeEmail(),
+            'image' => fake()->unique()->imageUrl(),
+            'address' => fake()->address(),
+            'phone' => fake()->phoneNumber(),
+            'age' => fake()->numberBetween(19, 25),
+            'gender' => fake()->randomElement(['male', 'female']),
+            'updated_at' => now(),
+            'created_at' => now(),
+            'track_id' => Track::inRandomOrder()->value('id'),
 
 
         ];

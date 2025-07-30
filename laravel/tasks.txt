@@ -27,3 +27,27 @@ id , name , image,description ==> student
 componet ==> navbar , buttons , bootstrap 
 ==> functions ===> update , delete 
 ==> views ==> update by new data 
+
+
+======================================= Day4
+handle validation and pagination in table student and track
+handle relation between student , track  ==> show student track Name , show track all students
+
+=================> new table courses  ==> id , name , image , description , code  
+
+student course ==> student take many course
+student course ==> course has many student
+
+track  course==> track has one course
+track  course==> course in many tracks
+================>
+show of students ==> show all courses 
+show course ===> show all students take install
+
+
+===================>
+show of tracks ==> show all courses 
+show course ===> show all tracks take install
+
+
+

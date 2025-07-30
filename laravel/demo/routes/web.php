@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TrackController;
 use Illuminate\Support\Facades\Route;
 // Route:method ('url,(){})
 Route::get('/', function () {
@@ -78,3 +79,28 @@ Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('st
 Route::get('/students/{id}', [StudentController::class, 'show'])->name('students.view');
 Route::get('/students/update/{id}',[StudentController::class,'update'])->name('students.update');
 Route::put('/students/edit/{id}',[StudentController::class,'edit'])->name('students.edit');
+// ==============================>
+//route::resource
+Route::resource('tracks', TrackController::class);
+/**
+ *  POST            _ignition/update-config .. ignition.updateConfig › Spatie\LaravelIgnition › UpdateConfigController
+ *  POST            student/store ........................................... students.store › StudentController@store
+ * GET|HEAD        students ................................................ students.index › StudentController@index
+ * GET|HEAD        students/create ....................................... students.create › StudentController@create
+ * PUT             students/edit/{id} ........................................ students.edit › StudentController@edit
+ * GET|HEAD        students/update/{id} .................................. students.update › StudentController@update
+ * DELETE          students/{id} ....................................... students.destroy › StudentController@destroy
+ * GET|HEAD        students/{id} ............................................. students.view › StudentController@show
+ * =================================== TRack Routes ============================
+ *  method of route  url                            name            function in controller
+ * GET|HEAD        tracks ..................... tracks.index › TrackController@index
+ * POST            tracks ...................................................... tracks.store › TrackController@store
+ * GET|HEAD        tracks/create ............................................. tracks.create › TrackController@create
+ * GET|HEAD        tracks/{track} ................................................ tracks.show › TrackController@show
+ * PUT|PATCH       tracks/{track} ............................................ tracks.update › TrackController@update
+ * DELETE          tracks/{track} .......................................... tracks.destroy › TrackController@destroy
+ * GET|HEAD        tracks/{track}/edit ........................................... tracks.edit › TrackController@edit
+ * GET|HEAD        up ...............................................................................................
+
+
+ */

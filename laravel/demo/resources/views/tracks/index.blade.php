@@ -14,8 +14,8 @@
 <div class="m-5 d-flex justify-content-around">
     <h3 class="text-success text-center ">All Students Page</h3>
 
-            {{-- <a href="{{ route('students.create') }}"><button class="btn btn-success">Create Student</button></a> --}}
-            <a href="{{ route('students.create') }}">  <x-button class="success" name="Create Student"></x-button>
+            {{-- <a href="{{ route('tracks.create') }}"><button class="btn btn-success">Create track</button></a> --}}
+            <a href="{{ route('tracks.create') }}">  <x-button class="success" name="Create track"></x-button>
 </a>
 
 </div>
@@ -26,26 +26,26 @@
     <tr>
       {{-- <th scope="col">id</th> --}}
       <th scope="col">Name</th>
-      <th scope="col">Address</th>
+      <th scope="col">description</th>
       <th scope="col">Image</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
-@foreach ($students as $student )
+@foreach ($tracks as $track )
 <tr>
-    {{-- <td>{{ $student->id}}</td> --}}
-    <td>{{ $student->name}}</td>
-    <td>{{ $student->address }}</td>
-    <td><img src="{{ $student->image}}" alt="studentImage" srcset="" width="50px" height="50px"></td>
+    {{-- <td>{{ $track->id}}</td> --}}
+    <td>{{ $track->name}}</td>
+    <td>{{ $track->description }}</td>
+    <td><img src="{{ $track->image}}" alt="trackImage" srcset="" width="50px" height="50px"></td>
     <td>
-        <a href="{{ route('students.view',$student->id) }}">  <x-button class="warning" name="Show"></x-button>
+        <a href="{{ route('tracks.show',$track->id) }}">  <x-button class="warning" name="Show"></x-button>
 </a>
-       <a href="{{ route('students.update',$student->id) }}">   <x-button class="primary" name="Edit"></x-button>
+       <a href="{{ route('tracks.update',$track->id) }}">   <x-button class="primary" name="Edit"></x-button>
 </a>
-        {{-- <a href="{{ route('students.destroy',$student->id) }}"></a> --}}
+        {{-- <a href="{{ route('tracks.destroy',$track->id) }}"></a> --}}
 
-        <form action="{{ route('students.destroy',$student->id) }}" method="post">
+        <form action="{{ route('tracks.destroy',$track->id) }}" method="post">
             @method('DELETE')
             @csrf
             {{-- generate input:hidden ==> acess data --}}
@@ -55,12 +55,19 @@
         </form>
     </td>
 </tr>
+
 @endforeach
   </tbody>
 
 </table>
+
+{{-- show all students in this track --}}
+
+
+
+
 <div class="mt-5 d-flex justify-center align-items-center ">
-    {{ $students->links() }}
+    {{ $tracks->links() }}
 </div>
 
 

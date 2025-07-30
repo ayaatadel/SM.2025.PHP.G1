@@ -9,6 +9,11 @@ class Student extends Model
 {
     //
     use HasFactory;
-    protected $fillable=['name','address','image','age','email','gender'];
+    protected $fillable=['name','address','image','age','email','gender','track_id'];
     public $timestamps=false;
+      // student has one track
+      function track()
+      {
+        return $this->belongsTo(Track::class);
+      }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\Track;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -43,7 +44,7 @@ class StudentController extends Controller
    {
     // $student=Student::find($id);
     $student=Student::findOrFail($id);
-    // dd($student);
+    // dd($student);// track_id
     return view('studentData',compact('student'));
     // return view('studentData',['student'=>$student]);
    }
@@ -57,15 +58,37 @@ class StudentController extends Controller
 
    function create()
    {
-    return view('create');
+    $tracks=Track::all();
+
+    return view('create',compact('tracks'));
    }
 
-   function store()
+   function store(Request $request)
    {
     // dd($_REQUEST);
     // dd(request()->all());
     // $requestedData=request()->except('_token');
+
+
+
+    $requestedData=request()->validate([
+        // validation
+        'name' => 'required|unique:students,name|min:3',
+        'image' => 'unique:students,image',
+        'email' => 'required|unique:students,email',
+        'address' => 'required',
+        'phone' => 'required|unique:students,phone|min:11',
+        'gender' => 'required',
+    ],[
+        // message
+        'name.required'=>'student name is required',
+        'name.min'=>'student name must be more than three characters',
+        'email.required'=>'student email is required',
+        'email.unique'=>'student email is unique',
+        'phone.min'=>'student phone must be 11 numbers',
+    ]);
     $requestedData=request()->all();
+    // dd($requestedData);
     Student::create($requestedData);
     return to_route('students.index');
 

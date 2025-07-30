@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Track;
 use Illuminate\Http\Request;
 
+
 class TrackController extends Controller
 {
     /**
@@ -13,6 +14,8 @@ class TrackController extends Controller
     public function index()
     {
         //
+        $tracks=Track::orderBy('id',"desc")->paginate(5);
+        return view('tracks.index',compact('tracks'));
     }
 
     /**
@@ -21,6 +24,7 @@ class TrackController extends Controller
     public function create()
     {
         //
+        return view('tracks.create');
     }
 
     /**
@@ -29,6 +33,21 @@ class TrackController extends Controller
     public function store(Request $request)
     {
         //
+           $requestedData=$request->validate([
+        'name' => 'required|unique:tracks,name|min:2',
+        'image' => 'unique:tracks,image',
+
+        'description' => 'required',
+
+    ],[
+        'name.required'=>'track name is required',
+        'name.min'=>'track name must be at least 2 characters',
+        'description.required'=>'track description is required',
+        'description.unique'=>'track description is unique',
+    ]);
+    $requestedData=request()->all();
+    Track::create($requestedData);
+    return to_route('tracks.index');
     }
 
     /**
@@ -37,6 +56,8 @@ class TrackController extends Controller
     public function show(Track $track)
     {
         //
+        // dd($track);
+        return view('tracks.view',compact('track'));
     }
 
     /**
@@ -45,6 +66,7 @@ class TrackController extends Controller
     public function edit(Track $track)
     {
         //
+          return view('tracks.update',compact('track'));
     }
 
     /**
@@ -53,6 +75,9 @@ class TrackController extends Controller
     public function update(Request $request, Track $track)
     {
         //
+     $requestedData=$request->all();
+     $track->update($requestedData);
+    return to_route('tracks.index');
     }
 
     /**
@@ -61,5 +86,7 @@ class TrackController extends Controller
     public function destroy(Track $track)
     {
         //
+        $track->delete();
+        return to_route('tracks.index');
     }
 }

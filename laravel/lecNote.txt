@@ -163,8 +163,31 @@ php artisan db:seed --class=StudentSeeder
 pagination   ==> app service privder ==> use
 ===> function in controller u want to use 
 
-===============> 
-realation between tables 
-
 ==========================>
-valiadtion errors ===========> 
+valiadtion errors ===========> https://laravel.com/docs/11.x/validation#main-content
+
+===============> 
+realation between tables =one to many , one to one , many to many
+one to many ==> pk from on one and put in many
+many to many ==> generate new table ==> pk of two tables ==> paviot table
+one to one  ==> total ==> mandatory ==> generate new table ==> pk of two tables ==> paviot table
+one to one  ==> total ==> mandatory ==> pk of any one put in another table
+one to one  ==> total ==> mandatory ==> pk of any one put in another table
+one to one  ==> two partial ==>two  not mandatory ==> generate new table ==> pk of two tables ==> paviot table
+
+
+====================>
+generate track controller ==> model , seeder , factory
+php artisan make:model Track --all
+=======================================>
+relation => track & student 
+
+track             student   =============> migration 
+   1                  1
+   1                 m
+
+   pk ==> 1  put ==> table (many)
+   table ==> student ===> id of track     
+
+
+   ================> relation to show data ===> model      

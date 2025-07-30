@@ -19,7 +19,10 @@ return new class extends Migration
              $table->integer('age');
              $table->enum('gender',['male','female'])->default('male');
              $table->string('image')->nullable()->default("https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg");
-            $table->timestamps();
+
+            //  $table->foreign('track_id')->references('id')->on('tracks')->cascadeOnDelete()->cascadeOnDelete();
+            $table->foreignId('track_id')->nullable()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+             $table->timestamps();
         });
     }
 
