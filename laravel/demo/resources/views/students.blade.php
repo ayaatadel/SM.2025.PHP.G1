@@ -57,8 +57,11 @@
 </tr>
 @endforeach
   </tbody>
-</table>
 
+</table>
+<div class="mt-5 d-flex justify-center align-items-center ">
+    {{ $students->links() }}
+</div>
 
 
 

@@ -33,7 +33,8 @@ class StudentController extends Controller
    function index()
    {
 
-    $students=Student::all();
+    // $students=Student::all();
+    $students=Student::orderBy('id',"desc")->paginate(5);
     return view('students',['students'=>$students]);
    }
 

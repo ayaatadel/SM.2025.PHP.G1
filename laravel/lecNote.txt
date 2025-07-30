@@ -147,3 +147,24 @@ tables ===>
 ==> rollback on step ==>php artisan migrate:rollback
 ==> rollback on patch ==>php artisan migrate:rollback --patch=2
 ==> rollback on steps ==>php artisan migrate:rollback --steps=2
+
+=====================================> Day4
+====> fake data ===> dumy data 
+seeder ==> https://laravel.com/docs/11.x/seeding#writing-seeders
+make seeder ==>  php artisan make:seeder StudentSeeder
+
+
+factory=>php artisan make:seeder StudentFactory --model=Student   ==>https://laravel.com/docs/11.x/eloquent-factories#introduction
+factory ==> generate fake data ==> fake->name()
+seeder ==> seed data that u make in factory in your db 
+php artisan db:seed --class=StudentSeeder
+
+=============
+pagination   ==> app service privder ==> use
+===> function in controller u want to use 
+
+===============> 
+realation between tables 
+
+==========================>
+valiadtion errors ===========> 
