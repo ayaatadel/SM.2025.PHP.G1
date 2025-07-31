@@ -48,6 +48,9 @@ show course ===> show all students take install
 ===================>
 show of tracks ==> show all courses 
 show course ===> show all tracks take install
-
+======================================================>
+api ==> student controller   ============> middleware 
+api ==> track controller     ============> middleware 
+api ==> course controller     ============> middleware 
 
 
